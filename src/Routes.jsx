@@ -7,6 +7,7 @@ import Authentication from './pages/authentication';
 import PostCreation from './pages/post-creation';
 import ContentCalendar from './pages/content-calendar';
 import SocialAccounts from './pages/social-accounts';
+import MediaLibrary from './pages/media-library';
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route path="/post-creation" element={<PostCreation />} />
         <Route path="/content-calendar" element={<ContentCalendar />} />
         <Route path="/social-accounts" element={<SocialAccounts />} />
+        <Route path="/media-library" element={<MediaLibrary />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
