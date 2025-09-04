@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #1A1A1A; /* Rich dark base */
+    --color-foreground: #F9FAFB; /* High contrast white */
+    --color-card: #2D2D2D; /* Elevated surface color */
+    --color-card-foreground: #F9FAFB; /* High contrast white */
+    --color-popover: #2D2D2D; /* Elevated surface color */
+    --color-popover-foreground: #F9FAFB; /* High contrast white */
+    --color-muted: #374151; /* Border gray */
+    --color-muted-foreground: #9CA3AF; /* Muted gray */
+    
+    /* Primary Colors */
+    --color-primary: #6B46C1; /* Deep purple */
+    --color-primary-foreground: #F9FAFB; /* High contrast white */
+    --color-secondary: #8B5CF6; /* Lighter purple variant */
+    --color-secondary-foreground: #F9FAFB; /* High contrast white */
+    
+    /* Accent Colors */
+    --color-accent: #10B981; /* Success green */
+    --color-accent-foreground: #F9FAFB; /* High contrast white */
+    
+    /* State Colors */
+    --color-success: #059669; /* Darker green */
+    --color-success-foreground: #F9FAFB; /* High contrast white */
+    --color-warning: #D97706; /* Amber orange */
+    --color-warning-foreground: #F9FAFB; /* High contrast white */
+    --color-error: #DC2626; /* Clear red */
+    --color-error-foreground: #F9FAFB; /* High contrast white */
+    --color-destructive: #DC2626; /* Clear red */
+    --color-destructive-foreground: #F9FAFB; /* High contrast white */
+    
+    /* UI Elements */
+    --color-border: #374151; /* Border gray */
+    --color-input: #2D2D2D; /* Elevated surface color */
+    --color-ring: #6B46C1; /* Deep purple */
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body, p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar for dark theme */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #1A1A1A;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #1A1A1A;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #374151;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #4B5563;
+  }
+  
+  /* Glass morphism utility */
+  .glass {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(45, 45, 45, 0.8);
+    border: 1px solid rgba(55, 65, 81, 0.3);
+  }
+  
+  /* Elevation shadows */
+  .elevation-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .elevation-modal {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .elevation-tooltip {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 200ms ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
